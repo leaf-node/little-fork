@@ -1,0 +1,20 @@
+{
+  "name": "little-fork",
+  "version": "1.0.0",
+  "description": "Simple fork manager: event callback swapping",
+  "repository": "gitlab:sudoman/little-fork",
+  "main": "src/main.js",
+  "files": [
+      "src",
+      "README.md",
+      "COPYING"
+  ],
+  "keywords": [
+      "fork",
+      "child process",
+      "simple",
+      "basic"
+  ],
+  "author": "Andrew Engelbrecht",
+  "license": "CC0-1.0"
+}
