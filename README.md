@@ -8,9 +8,16 @@ The API for `little-fork` is a subset and basic extension of node's
 
 ## Status:
 
-Version: 1.0.0
+Version: 1.0.2
 
 This is beta software.
+
+## Caveats
+
+There is a time gap between removal of the previous listener and addition of
+the next one. To avoid a race condition, only call `worker.replaceListener()`
+when you know that you will not receive a message from that worker, ie between
+jobs initiated by the parent process.
 
 ## Installation:
 
