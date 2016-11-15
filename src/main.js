@@ -18,7 +18,8 @@ simpleSubprocess = function (workerPath) {
     "use strict";
 
     var that, worker, listeners,
-        send, replaceListener, disconnect, kill;
+        send, replaceListener, isConnected,
+        disconnect, kill;
 
     worker = fork(workerPath);
 
@@ -44,6 +45,10 @@ simpleSubprocess = function (workerPath) {
         listeners[listenerType] = newListener;
     };
 
+    isConnected = function () {
+        return worker.connected;
+    };
+
     disconnect = function () { return worker.disconnect(); };
 
     kill = function (signal) {
@@ -55,6 +60,7 @@ simpleSubprocess = function (workerPath) {
     that = {};
     that.send = send;
     that.replaceListener = replaceListener;
+    that.isConnected = isConnected;
     that.disconnect = disconnect;
     that.kill = kill;
 
