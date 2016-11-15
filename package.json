@@ -1,6 +1,6 @@
 {
   "name": "little-fork",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "New child process event listeners automatically replace previous listeners",
   "repository": "gitlab:sudoman/little-fork",
   "main": "src/main.js",

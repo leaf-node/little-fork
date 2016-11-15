@@ -32,17 +32,17 @@ simpleSubprocess = function (workerPath) {
 
     replaceListener = function (listenerType, newListener) {
 
-        var oldListener;
+        var isNewListenerType;
 
-        oldListener = listeners[listenerType];
-
-        if (oldListener !== undefined) {
-            worker.removeListener(listenerType, oldListener);
-        }
-
-        worker.on(listenerType, newListener);
+        isNewListenerType = (listeners[listenerType] === undefined);
 
         listeners[listenerType] = newListener;
+
+        if (isNewListenerType) {
+            worker.on(listenerType, function (message) {
+                listeners[listenerType](message);
+            });
+        }
     };
 
     isConnected = function () {

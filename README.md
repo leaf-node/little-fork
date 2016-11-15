@@ -14,10 +14,9 @@ This is beta software.
 
 ## Caveats
 
-There is a time gap between removal of the previous listener and addition of
-the next one. To avoid a race condition, only call `worker.replaceListener()`
-when you know that you will not receive a message from that worker, ie between
-jobs initiated by the parent process.
+There is a time gap between the calling of .replaceListener() and the listener
+table getting updated. If the child process repsonds in that time period then
+the previous listener will be executed.
 
 ## Installation:
 
