@@ -1,6 +1,6 @@
 {
   "name": "little-fork",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "New child process event listeners automatically replace previous listeners",
   "repository": "github:leaf-node/little-fork",
   "main": "src/main.js",
